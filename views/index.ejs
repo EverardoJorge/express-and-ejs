@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>fbAdds</title>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript">
+      var nextinput = 0;
+      function AgregarCampos(){
+      nextinput++;
+      campo = '<li id="rut'+nextinput+'">Message:<input type="text" size="20" id="message' + nextinput + '"&nbsp; name="message' + nextinput + '"&nbsp; /></li>';
+      $("#campos").append(campo);
+      }
+      </script>
+      
+  </head>
+  <body>
+    <h1>Render EJS</h1>
+    <form id="form" name="form" method="post" action="/message">
+      <a href="#" onclick="AgregarCampos();">New Message</a>
+      <div id="campos">
+      </div>
+      <input type="submit" value="Transform">
+    </form>
+  </body>
+</html>
